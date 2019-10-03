@@ -1,4 +1,6 @@
-﻿/* Lab 1 
+﻿USE AdventureWorksLT2012
+GO
+/* Lab 1 
 Challenge 1: Retrieve Customer Data
 */
 
@@ -49,6 +51,7 @@ SELECT
 	SalesPerson
 	,CustomerName = COALESCE([Title] + N' ',N'') + LastName 
 	, Phone
+	, voorbeeld = [Title] + N' ' + LastName
 FROM [AdventureWorksLT2012].[SalesLT].[Customer]
 ORDER BY SalesPerson
 
@@ -74,6 +77,7 @@ The SalesLT.SalesOrderHeader table contains records of sales orders. You have be
 SELECT 
 	h.SalesOrderNumber + N' (' + CAST(h.RevisionNumber AS nvarchar(10)) + N')'
 	, Orderdate = CONVERT(NVARCHAR(10),h.OrderDate, 102)
+	, OrderDate2 = FORMAT(h.OrderDate,'d','nl-BE')
 FROM AdventureWorksLT2012.SalesLT.SalesOrderHeader h
 
 /*
