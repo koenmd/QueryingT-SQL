@@ -14,6 +14,6 @@ SELECT ProductNumber, Color, Size, Color + ', ' + Size AS ProductDetails
 FROM SalesLT.Product; 
 GO
 
-SELECT ProductID + ': ' + Name
+SELECT CAST(ProductID AS NVARCHAR(10)) + ': ' + Name
 FROM SalesLT.Product; 
 GO

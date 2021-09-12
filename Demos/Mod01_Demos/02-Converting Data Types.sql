@@ -16,6 +16,6 @@ SELECT Name, CAST (Size AS Integer) AS NumericSize
 FROM SalesLT.Product; --(note error - some sizes are incompatible)
 GO
 
-SELECT Name, TRY_CAST (Size AS Integer) AS NumericSize
+SELECT Name, TRY_CAST (Size AS Integer) AS NumericSize, Size
 FROM SalesLT.Product; --(note incompatible sizes are returned as NULL)
 GO
